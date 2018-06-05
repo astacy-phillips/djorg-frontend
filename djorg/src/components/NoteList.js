@@ -31,7 +31,7 @@ class NoteList extends Component {
         return <div>Error</div>
         }
     
-        const notesToRender = this.props.noteQuery.notes
+        const notesToRender = this.props.noteQuery.allNotes
     
         return (
         <div>{notesToRender.map(note => <Note key={note.id} note={note} />)}</div>

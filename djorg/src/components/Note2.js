@@ -49,14 +49,14 @@ const Note = styled.div`
 }
 `
 
-const Note2 = ({data: {loading, error, notes}}) => {
+const Note2 = ({data: {loading, error, allNotes}}) => {
     if (error) return <p>error</p>
     if (!loading) {
       return (
         <Wrapper>
           <h2>Djorgenstein Notes</h2>
           <div>
-          {notes.map((note, index) => (
+          {allNotes.map((note, index) => (
             <Note key={index}>
               <h4>{note.title}</h4>
               <p>{note.content}</p>
@@ -70,8 +70,8 @@ const Note2 = ({data: {loading, error, notes}}) => {
   }
   
   export const query = gql`
-    query notes {
-      notes {
+    query allNotes {
+      allNotes {
       title
       content
       }
